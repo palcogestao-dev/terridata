@@ -473,6 +473,38 @@ export default function App() {
     setAnswers(a => ({ ...a, [qId]: idx }));
   }
 
+  function submitToGoogleForms(currentProfile, currentScore) {
+    const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSePrydOBRcWxrmDc-Q5S3Jwm1fZGe3kcbNTwiM0ERvzYDew6A/formResponse";
+    const now = new Date();
+    const params = new URLSearchParams({
+      "entry.1619683464": lead.nome,
+      "entry.81708242":   lead.email,
+      "entry.1907147194": lead.estado,
+      "entry.38937":      lead.municipio,
+      "entry.977816148":  String(currentScore),
+      "entry.2086204536": currentProfile.label,
+      "entry.934002573":  QUESTIONS[0].options[answers[1]]  || "",
+      "entry.1362907413": QUESTIONS[1].options[answers[2]]  || "",
+      "entry.1195044631": QUESTIONS[2].options[answers[3]]  || "",
+      "entry.1890185371": String((answers[4] ?? -1) + 1),
+      "entry.237667860":  String((answers[5] ?? -1) + 1),
+      "entry.1025594654": String((answers[6] ?? -1) + 1),
+      "entry.437467733":  String((answers[7] ?? -1) + 1),
+      "entry.1589147376": String((answers[8] ?? -1) + 1),
+      "entry.1949449337": String((answers[9] ?? -1) + 1),
+      "entry.1769992499": String((answers[10] ?? -1) + 1),
+      "entry.1690360976": String((answers[11] ?? -1) + 1),
+      "entry.1724616346": String((answers[12] ?? -1) + 1),
+      "entry.1143585914": String((answers[13] ?? -1) + 1),
+      "entry.1121450639": QUESTIONS[13].options[answers[14]] || "",
+      "entry.229713361":  QUESTIONS[14].options[answers[15]] || "",
+      "entry.1623718053_year":  String(now.getFullYear()),
+      "entry.1623718053_month": String(now.getMonth() + 1),
+      "entry.1623718053_day":   String(now.getDate()),
+    });
+    fetch(FORM_URL + "?" + params.toString(), { method:"POST", mode:"no-cors" });
+  }
+
   function openReport() {
     const html = generateReport({ lead, score, profile, conditionals, answers });
     const blob = new Blob([html], { type:"text/html;charset=utf-8" });
@@ -616,7 +648,10 @@ export default function App() {
             </div>
 
             <button className="btn-submit" disabled={!leadValid}
-              onClick={() => setScreen(SCREEN.RESULT)}>
+              onClick={() => {
+                submitToGoogleForms(getProfile(score), score);
+                setScreen(SCREEN.RESULT);
+              }}>
               Ver meu diagnóstico →
             </button>
           </div>
