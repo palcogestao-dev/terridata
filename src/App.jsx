@@ -233,8 +233,8 @@ body{font-family:'DM Sans',sans-serif;background:#F2F0E9;color:#1a1626}
 
 <div class="cover">
   <div class="cover-brand">TERRI<span>DATA</span></div>
-  <div class="cover-eyebrow">Relatório de Diagnóstico Estratégico</div>
-  <h1 class="cover-title">Maturidade da<br/>Gestão Municipal</h1>
+  <div class="cover-eyebrow">Relatório Estratégico</div>
+  <h1 class="cover-title">Diagnóstico da<br/>Gestão Municipal</h1>
   <p class="cover-sub">Análise com recomendações estratégicas por área de gestão pública</p>
   <div class="cover-meta">
     <div><div class="meta-label">Respondente</div><div class="meta-value">${lead.nome}</div></div>
@@ -246,7 +246,7 @@ body{font-family:'DM Sans',sans-serif;background:#F2F0E9;color:#1a1626}
 </div>
 
 <div class="section">
-  <div class="sec-title">Pontuação & Perfil de Maturidade</div>
+  <div class="sec-title">Pontuação & Perfil de Gestão</div>
   <div class="score-area">
     <div class="score-num">${score}</div>
     <div class="score-max">pontos de ${MAX_SCORE} possíveis</div>
@@ -282,7 +282,7 @@ ${conditionals.length > 0 ? `
 <div class="cta-section">
   <div class="cta-title">Quer aprofundar esse diagnóstico?</div>
   <div class="cta-sub">Nossa equipe pode transformar essa leitura em um plano estratégico concreto para a sua gestão.</div>
-  <a class="wa-btn" href="https://wa.me/5551992417486?text=Olá%2C%20acabei%20de%20fazer%20o%20diagnóstico%20de%20maturidade%20municipal%20e%20gostaria%20de%20conversar." target="_blank">💬 Falar no WhatsApp</a>
+  <a class="wa-btn" href="https://wa.me/5551992417486?text=Olá%2C%20acabei%20de%20fazer%20o%20diagnóstico%20de%20gestao%20municipal%20e%20gostaria%20de%20conversar." target="_blank">💬 Falar no WhatsApp</a>
 </div>
 
 <div class="footer">
@@ -537,10 +537,10 @@ export default function App() {
         {/* WELCOME */}
         {screen === SCREEN.WELCOME && (
           <div className="card" key="welcome">
-            <div className="welcome-eyebrow">diagnóstico estratégico</div>
-            <h1 className="welcome-title">Maturidade da Gestão Municipal</h1>
+            <div className="welcome-eyebrow">diagnóstico estratégico da</div>
+            <h1 className="welcome-title">Gestão Municipal</h1>
             <p className="welcome-sub">
-              Este diagnóstico avalia o nível de maturidade da sua gestão em áreas críticas para o desenvolvimento da cidade. Ao final, você receberá uma leitura clara dos riscos, gargalos e prioridades estratégicas — com recomendações práticas por área.
+              Este diagnóstico avalia o momento da sua gestão em áreas críticas para o desenvolvimento da cidade. Ao final, você receberá uma leitura clara dos riscos, gargalos e prioridades estratégicas — com recomendações práticas por área.
             </p>
             <p className="welcome-note">
               Não existem respostas certas ou erradas. Quanto mais honesto(a), mais útil será o diagnóstico.
@@ -709,7 +709,7 @@ export default function App() {
                 Nossa equipe pode transformar essa leitura em um plano estratégico concreto para a sua gestão.
               </div>
               <a className="btn-cta-wa"
-                href="https://wa.me/5551992417486?text=Olá%2C%20acabei%20de%20fazer%20o%20diagnóstico%20de%20maturidade%20municipal%20e%20gostaria%20de%20conversar."
+                href="https://wa.me/5551992417486?text=Olá%2C%20acabei%20de%20fazer%20o%20diagnóstico%20de%20gestao%20municipal%20e%20gostaria%20de%20conversar."
                 target="_blank" rel="noopener noreferrer">
                 💬 Falar no WhatsApp
               </a>
